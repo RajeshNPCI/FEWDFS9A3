@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script>
+	function formtotable(){
+		//read values from form
+		var firstname=document.getElementById("firstname").value;
+		var lastname=document.getElementById("lastname").value;
+		var email=document.getElementById("email").value;
+		//send values to bootstrap table
+		document.getElementById('table1').innerHTML+="<tr><td>"+firstname+"</td>"+"<td>"+lastname+"</td>"+"<td>"+email+"</td></tr>";		
+		//clear input box values
+		document.getElementById('firstname').value="";
+		document.getElementById('lastname').value="";
+		document.getElementById('email').value="";				
+		return false;
+	}
+  </script>
+</head>
+<body>
+	<center><form class="form-horizontal">
+		<h3>Enter values into below text box then click on submit to display in below bootstrap table</h3>
+		<!--takes input values-->
+		<input type="text"  id="firstname"></br></br>
+		<input type="text"  id="lastname"></br></br>
+		<input type="text"  id="email"></br></br>
+		<input type="button" value="submit" onclick="return formtotable()">
+	</form></center>
+	<!--container to display values in bootstrap table-->
+	<div class="container"> 
+		<h3>Form values are display below bootstrap table once enter value and submit</h3>
+	<table class="table" id="table1">
+		<thead>
+		<tr>
+			<th>Firstname</th>
+			<th>Lastname</th>
+			<th>Email</th>
+		</tr>
+		</thead>
+		<tbody>
+		</tbody>
+	</table>
+</div>	
+</body>
+</html>
